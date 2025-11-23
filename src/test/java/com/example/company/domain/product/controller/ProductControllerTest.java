@@ -7,9 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
@@ -26,17 +23,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(ProductController.class)
-@Import(ProductControllerTest.TestConfig.class)
 @ActiveProfiles("test")
 class ProductControllerTest {
-
-    @Configuration
-    static class TestConfig {
-        @Bean
-        public ObjectMapper objectMapper() {
-            return new ObjectMapper();
-        }
-    }
 
     @Autowired
     private MockMvc mockMvc;
