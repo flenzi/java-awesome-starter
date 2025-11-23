@@ -15,6 +15,28 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 - **CI/CD Pipeline** with GitHub Actions including Trivy security scanning
 - **Code Quality Tools** and standardized project structure
 
+## Roadmap
+
+### Planned Features
+
+The following features are planned for future releases:
+
+- [ ] **Redis caching example** - Integration pattern for distributed caching
+- [ ] **Kafka/RabbitMQ messaging example** - Event-driven architecture support
+- [ ] **GraphQL support** - Alternative query language implementation
+- [ ] **Rate limiting** - Request throttling and protection mechanisms
+- [ ] **Distributed tracing (OpenTelemetry)** - Observability and performance monitoring
+- [ ] **Kubernetes deployment manifests** - Container orchestration configurations
+- [ ] **Terraform infrastructure as code** - Infrastructure automation templates
+
+### Completed Features
+
+- [x] **Liquibase for database migrations** - SQL-based version-controlled schema management
+- [x] **Domain-Driven Design** - Clean architecture with proper layer separation
+- [x] **Comprehensive testing** - Unit, integration, and architecture tests
+- [x] **Docker support** - Multi-stage builds with security best practices
+- [x] **CI/CD pipeline** - Automated testing, coverage, and security scanning
+
 ## Tech Stack
 
 ### Core
