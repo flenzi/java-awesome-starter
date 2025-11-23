@@ -24,6 +24,7 @@ class GlobalExceptionHandlerTest {
     @Test
     void shouldHandleResourceNotFoundException() throws Exception {
         mockMvc.perform(get("/test/resource-not-found"))
+                .andDo(result -> System.out.println("Response: " + result.getResponse().getContentAsString()))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.status").value(404))
                 .andExpect(jsonPath("$.message").value("Resource not found"));
