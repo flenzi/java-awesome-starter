@@ -1,7 +1,7 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.3.5"
-    id("io.spring.dependency-management") version "1.1.6"
+    id("org.springframework.boot") version "4.0.0"
+    id("io.spring.dependency-management") version "1.1.7"
     id("jacoco")
 }
 
@@ -38,7 +38,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 
     // OpenAPI/Swagger Documentation
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.0")
 
     // JSON Processing
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
