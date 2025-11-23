@@ -1,0 +1,55 @@
+# Gradle
+.gradle
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Spring Boot
+.springBeans
+spring-boot-devtools.properties
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE - VSCode
+.vscode/
+
+# IDE - NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.war
+*.ear
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+hs_err_pid*
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.jacoco
+
+# Environment
+.env
+.env.local
