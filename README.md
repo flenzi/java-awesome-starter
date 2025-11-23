@@ -32,7 +32,7 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 - **JUnit 5** - Testing framework
 - **Mockito** - Mocking framework
 - **ArchUnit** - Architecture testing
-- **JaCoCo** - Code coverage (80% minimum)
+- **JaCoCo** - Code coverage (60% minimum, configurable)
 
 ### Documentation
 - **SpringDoc OpenAPI** - API documentation and Swagger UI
