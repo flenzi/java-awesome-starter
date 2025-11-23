@@ -3,7 +3,6 @@ package com.example.company.domain.product.service;
 import com.example.company.common.exception.ResourceNotFoundException;
 import com.example.company.domain.product.model.Product;
 import com.example.company.domain.product.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,12 +14,15 @@ import java.util.List;
  * Service layer for Product domain operations.
  */
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class ProductService {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
     private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     /**
      * Retrieve all products.

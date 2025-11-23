@@ -3,7 +3,6 @@ package com.example.company.domain.user.service;
 import com.example.company.common.exception.ResourceNotFoundException;
 import com.example.company.domain.user.model.User;
 import com.example.company.domain.user.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,12 +14,15 @@ import java.util.List;
  * Service layer for User domain operations.
  */
 @Service
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /**
      * Retrieve all users.
