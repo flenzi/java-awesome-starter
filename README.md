@@ -248,12 +248,26 @@ The GitHub Actions pipeline includes:
 
 ## Database Migrations
 
-Migrations are managed with Liquibase in `src/main/resources/db/changelog/`.
+Migrations are managed with Liquibase using SQL files in `src/main/resources/db/changelog/`.
 
 **Create a new migration:**
-1. Create a new XML file in `db/changelog/changes/`
-2. Include it in `db.changelog-master.xml`
-3. Run the application to apply migrations
+1. Create a new SQL file in `db/changelog/changes/` with the format `00X-description.sql`
+2. Use Liquibase formatted SQL comments (see existing files for examples)
+3. Include the file in `db.changelog-master.yaml`
+4. Run the application to apply migrations
+
+**Example migration format:**
+```sql
+--liquibase formatted sql
+
+--changeset author:changeset-id
+CREATE TABLE example (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+--rollback DROP TABLE example;
+```
 
 ## Contributing
 
