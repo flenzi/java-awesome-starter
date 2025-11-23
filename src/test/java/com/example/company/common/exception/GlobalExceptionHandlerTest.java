@@ -1,5 +1,6 @@
 package com.example.company.common.exception;
 
+import com.example.company.Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -13,7 +14,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest(classes = {GlobalExceptionHandlerTest.TestController.class, GlobalExceptionHandler.class})
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 class GlobalExceptionHandlerTest {
@@ -24,7 +25,6 @@ class GlobalExceptionHandlerTest {
     @Test
     void shouldHandleResourceNotFoundException() throws Exception {
         mockMvc.perform(get("/test/resource-not-found"))
-                .andDo(result -> System.out.println("Response: " + result.getResponse().getContentAsString()))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.status").value(404))
                 .andExpect(jsonPath("$.message").value("Resource not found"));
