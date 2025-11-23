@@ -20,7 +20,7 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 ### Core
 - **Java 21** - Latest LTS version
 - **Spring Boot 3.3.5** - Application framework
-- **Gradle 8.10.2** - Build tool with Kotlin DSL
+- **Gradle 8.11.1** - Build tool with Kotlin DSL
 
 ### Persistence
 - **Spring Data JPA** - Data access layer
