@@ -44,7 +44,7 @@ Please be respectful and constructive in all interactions.
 - Use meaningful variable and method names
 - Keep methods focused and concise
 - Add JavaDoc comments for public APIs
-- Use Lombok annotations to reduce boilerplate
+- Write explicit constructors and standard getters/setters for entities
 
 ### Architecture Guidelines
 

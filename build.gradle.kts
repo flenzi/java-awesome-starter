@@ -40,10 +40,6 @@ dependencies {
     // OpenAPI/Swagger Documentation
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 
-    // Lombok (reduces boilerplate)
-    compileOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
-
     // JSON Processing
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 

@@ -44,7 +44,6 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 - **Trivy** - Container vulnerability scanning
 
 ### Development Tools
-- **Lombok** - Reduces boilerplate code
 - **Spring Boot DevTools** - Hot reload during development
 
 ## Project Structure
