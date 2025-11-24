@@ -10,6 +10,26 @@
 
 A production-ready Spring Boot starter template featuring domain-driven design, comprehensive testing, automated security scanning, and enterprise-grade best practices.
 
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Roadmap](#roadmap)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Configuration Profiles](#configuration-profiles)
+- [Testing](#testing)
+- [API Documentation](#api-documentation)
+- [Architecture Principles](#architecture-principles)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Security](#security)
+- [Database Migrations](#database-migrations)
+- [Customization Guide](#customization-guide)
+- [Contributing](#contributing)
+- [Support](#support)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - **Spring Boot 4.0.0** with Java 21 LTS
@@ -22,28 +42,6 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 - **Docker Support** with multi-stage builds and security best practices
 - **CI/CD Pipeline** with GitHub Actions including Trivy security scanning
 - **Code Quality Tools** and standardized project structure
-
-## Roadmap
-
-### Planned Features
-
-The following features are planned for future releases:
-
-- [ ] **Redis caching example** - Integration pattern for distributed caching
-- [ ] **Kafka/RabbitMQ messaging example** - Event-driven architecture support
-- [ ] **GraphQL support** - Alternative query language implementation
-- [ ] **Rate limiting** - Request throttling and protection mechanisms
-- [ ] **Distributed tracing (OpenTelemetry)** - Observability and performance monitoring
-- [ ] **Kubernetes deployment manifests** - Container orchestration configurations
-- [ ] **Terraform infrastructure as code** - Infrastructure automation templates
-
-### Completed Features
-
-- [x] **Liquibase for database migrations** - SQL-based version-controlled schema management
-- [x] **Domain-Driven Design** - Clean architecture with proper layer separation
-- [x] **Comprehensive testing** - Unit, integration, and architecture tests
-- [x] **Docker support** - Multi-stage builds with security best practices
-- [x] **CI/CD pipeline** - Automated testing, coverage, and security scanning
 
 ## Tech Stack
 
@@ -75,6 +73,28 @@ The following features are planned for future releases:
 
 ### Development Tools
 - **Spring Boot DevTools** - Hot reload during development
+
+## Roadmap
+
+### Planned Features
+
+The following features are planned for future releases:
+
+- [ ] **Redis caching example** - Integration pattern for distributed caching
+- [ ] **Kafka/RabbitMQ messaging example** - Event-driven architecture support
+- [ ] **GraphQL support** - Alternative query language implementation
+- [ ] **Rate limiting** - Request throttling and protection mechanisms
+- [ ] **Distributed tracing (OpenTelemetry)** - Observability and performance monitoring
+- [ ] **Kubernetes deployment manifests** - Container orchestration configurations
+- [ ] **Terraform infrastructure as code** - Infrastructure automation templates
+
+### Completed Features
+
+- [x] **Liquibase for database migrations** - SQL-based version-controlled schema management
+- [x] **Domain-Driven Design** - Clean architecture with proper layer separation
+- [x] **Comprehensive testing** - Unit, integration, and architecture tests
+- [x] **Docker support** - Multi-stage builds with security best practices
+- [x] **CI/CD pipeline** - Automated testing, coverage, and security scanning
 
 ## Project Structure
 
@@ -299,9 +319,109 @@ CREATE TABLE example (
 --rollback DROP TABLE example;
 ```
 
+## Customization Guide
+
+To adapt this template for your own project:
+
+### 1. Update Package Names
+
+Replace the base package `com.example.company` with your organization's package:
+
+```bash
+# Find and replace in all Java files
+find src -name "*.java" -type f -exec sed -i 's/com\.example\.company/com.yourcompany.yourproject/g' {} +
+```
+
+Update the directory structure:
+```bash
+# Move from: src/main/java/com/example/company/
+# Move to:   src/main/java/com/yourcompany/yourproject/
+```
+
+### 2. Rename the Application
+
+1. Update `settings.gradle.kts`:
+   ```kotlin
+   rootProject.name = "your-project-name"
+   ```
+
+2. Update `build.gradle.kts`:
+   ```kotlin
+   group = "com.yourcompany"
+   description = "Your project description"
+   ```
+
+3. Rename the main application class from `Application.java` to `YourProjectApplication.java`
+
+4. Update Docker and Compose configurations with your project name
+
+### 3. Configure Database
+
+Update `application-prod.yml` with your database details:
+```yaml
+spring:
+  datasource:
+    url: jdbc:postgresql://your-db-host:5432/your-database
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+```
+
+### 4. Update Project Metadata
+
+- Update `README.md` with your project information
+- Modify `LICENSE` file with appropriate copyright holder
+- Update repository URLs in documentation
+- Configure GitHub Actions secrets for your CI/CD pipeline
+
+### 5. Customize Domains
+
+Remove or modify the example domains (`user` and `product`):
+- Delete unused domain packages
+- Create new domain packages following the DDD structure
+- Update ArchUnit tests to match your domain structure
+
+### 6. Configure Security (Optional)
+
+Add Spring Security if needed:
+```kotlin
+implementation("org.springframework.boot:spring-boot-starter-security")
+```
+
+### 7. Environment Variables
+
+Set required environment variables for production:
+- `SPRING_PROFILES_ACTIVE=prod`
+- `DB_USERNAME` - Database username
+- `DB_PASSWORD` - Database password
+- Additional configuration as needed
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and development process.
+
+## Support
+
+### Getting Help
+
+- **Documentation**: Check this README and inline code documentation
+- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/flenzi/java-awesome-starter/issues)
+- **Discussions**: Join conversations in [GitHub Discussions](https://github.com/flenzi/java-awesome-starter/discussions)
+
+### Reporting Issues
+
+When reporting issues, please include:
+- Java and Gradle versions (`./gradlew --version`)
+- Operating system and version
+- Steps to reproduce the issue
+- Expected vs actual behavior
+- Relevant logs or error messages
+
+### Feature Requests
+
+We welcome feature requests! Please:
+- Check existing issues and roadmap first
+- Clearly describe the feature and use case
+- Explain why it would be valuable for the project
 
 ## License
 
