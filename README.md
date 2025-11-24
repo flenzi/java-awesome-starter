@@ -1,10 +1,10 @@
 # Java Awesome Starter
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/flenzi/java-awesome-starter/ci.yml?branch=main&label=build&logo=github)
-![Code Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen?logo=codecov)
+![Code Coverage](https://img.shields.io/badge/coverage-60%25-brightgreen?logo=codecov)
 ![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.5-brightgreen?logo=spring)
-![Gradle](https://img.shields.io/badge/Gradle-8.11.1-blue?logo=gradle)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.0-brightgreen?logo=spring)
+![Gradle](https://img.shields.io/badge/Gradle-8.14.3-blue?logo=gradle)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)
 
@@ -12,10 +12,10 @@ A production-ready Spring Boot starter template featuring domain-driven design, 
 
 ## Features
 
-- **Spring Boot 3.3.5** with Java 21 LTS
+- **Spring Boot 4.0.0** with Java 21 LTS
 - **Domain-Driven Design** architecture with clear layer separation
 - **Comprehensive Testing** with JUnit 5, Mockito, and ArchUnit for architecture validation
-- **Code Coverage** enforced at 80% minimum with JaCoCo
+- **Code Coverage** enforced at 60% minimum with JaCoCo
 - **OpenAPI Documentation** with Swagger UI
 - **Database Migration** using Liquibase
 - **Multi-Profile Configuration** (dev, test, prod)
@@ -49,8 +49,8 @@ The following features are planned for future releases:
 
 ### Core
 - **Java 21** - Latest LTS version
-- **Spring Boot 3.3.5** - Application framework
-- **Gradle 8.11.1** - Build tool with Kotlin DSL
+- **Spring Boot 4.0.0** - Application framework
+- **Gradle 8.14.3** - Build tool with Kotlin DSL
 
 ### Persistence
 - **Spring Data JPA** - Data access layer
@@ -210,7 +210,7 @@ Or via application properties:
 ./gradlew jacocoTestReport
 ```
 
-### Verify coverage requirements (80% minimum)
+### Verify coverage requirements (60% minimum)
 ```bash
 ./gradlew jacocoTestCoverageVerification
 ```
